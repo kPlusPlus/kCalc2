@@ -18,12 +18,19 @@ namespace kCalc2
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-
+            HideColumn2();
         }
 
         private void ShowColumn2()
         {
-            tableLayoutPanel1.ColumnStyles[1].Width = new ColumnStyle(SizeType.Percent, 10F);
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 10F;
+        }
+
+        private void HideColumn2()
+        {
+            tableLayoutPanel1.ColumnStyles[1].SizeType = SizeType.Percent;
+            tableLayoutPanel1.ColumnStyles[1].Width = 1F;
         }
     }
 }
