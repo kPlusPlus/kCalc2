@@ -18,7 +18,16 @@ namespace kCalc2
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            HideColumn2();
+            if (btnMenu.FlatStyle == FlatStyle.Standard)
+            {
+                HideColumn2();
+                btnMenu.FlatStyle = FlatStyle.Flat;
+            }
+            else if (btnMenu.FlatStyle != FlatStyle.Standard)
+            {
+                ShowColumn2();
+                btnMenu.FlatStyle |= FlatStyle.Standard;
+            }
         }
 
         private void ShowColumn2()
